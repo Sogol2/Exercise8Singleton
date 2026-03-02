@@ -12,8 +12,9 @@ public class Player
     public void ScorePoints(int points)
     {
         //TODO: Call Scoreboard Singleton Instance AddScore Method
-        Scoreboard.GetInstance().AddScore(Name, points);
+        Scoreboard.AddScore(Name, points);
     }
 
 
 }
+
