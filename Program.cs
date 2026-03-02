@@ -40,6 +40,7 @@ class Program
 
         Console.WriteLine("\nFinal Results");
         //TODO: Call Singleton Instance DisplayScores() method.
-        Scoreboard.GetInstance().DisplayScores();
+        Scoreboard.DisplayScores();
     }
 }
+
