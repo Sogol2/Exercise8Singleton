@@ -20,7 +20,7 @@ public class Scoreboard
             _instance = new Scoreboard();
         return _instance;
     }
-    public void AddScore(string player, int points)
+    public static void AddScore(string player, int points)
     {
         if (_scores.ContainsKey(player))
             _scores[player] += points;
@@ -37,5 +37,6 @@ public class Scoreboard
             Console.WriteLine($"{entry.Key}: {entry.Value}");
         Console.WriteLine("=======================\n");
     }
+
 
 }
