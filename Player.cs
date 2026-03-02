@@ -1,5 +1,5 @@
 namespace Exercise8Singleton;
-
+//Names: Kylee, Sogol, Abi
 public class Player
 {
     public string Name { get; }
@@ -14,5 +14,6 @@ public class Player
         //TODO: Call Scoreboard Singleton Instance AddScore Method
         Scoreboard.GetInstance().AddScore(Name, points);
     }
+
 
 }
