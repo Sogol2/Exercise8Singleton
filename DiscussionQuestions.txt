@@ -1,0 +1,14 @@
+Names: Kylee, Sogol, Abi
+
+1. In the Scoreboard exercise, why does the hash code remain the same for all rounds?
+What does this prove about the Singleton pattern?
+
+
+
+2. If we removed the Singleton and allowed each player to have its own scoreboard, what problems would arise?
+Think about consistency, data integrity, and user experience.
+
+
+
+3. How could you modify the Scoreboard Singleton to also log scores to a file?
+What changes would you make to the design and where would you add the file-writing logic?
