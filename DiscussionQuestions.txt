@@ -3,16 +3,29 @@ Names: Kylee, Sogol, Abi
 1. In the Scoreboard exercise, why does the hash code remain the same for all rounds?
 What does this prove about the Singleton pattern?
 
-The hash code stays the same in every round because the game is using the same single `Scoreboard` object the whole time, not creating a new one each time someone scores. Since `GetHashCode()` is basically showing the identity of that object in memory, seeing the same value over and over means you’re always referencing the exact same instance. This proves what the Singleton pattern is meant to do: make sure there is only one shared `Scoreboard` in the entire program so all players update and view the same scoreboard data.
+The hash code stays the same in every round because the game is using the same single `Scoreboard` 
+object the whole time, not creating a new one each time someone scores. Since `GetHashCode()` 
+is basically showing the identity of that object in memory, seeing the same value over and over 
+means you’re always referencing the exact same instance. This proves what the Singleton pattern 
+is meant to do: make sure there is only one shared `Scoreboard` in the entire program so all 
+players update and view the same scoreboard data.
 
 
 2. If we removed the Singleton and allowed each player to have its own scoreboard, what problems would arise?
 Think about consistency, data integrity, and user experience.
 
-If we remove the Singleton and give each player their own scoreboard, we lose one shared source of truth. We’d end up with different score totals depending on which scoreboard we’re looking at, so the data becomes inconsistent and unreliable. That would confuse us as users because the “final results” wouldn’t match what happened in the game, and it would feel broken.
+If we remove the Singleton and give each player their own scoreboard, we lose one shared source
+of truth. We’d end up with different score totals depending on which scoreboard we’re looking at, 
+so the data becomes inconsistent and unreliable. That would confuse us as users because the 
+“final results” wouldn’t match what happened in the game, and it would feel broken.
 
 
 3. How could you modify the Scoreboard Singleton to also log scores to a file?
 What changes would you make to the design and where would you add the file-writing logic?
 
-We can keep `Scoreboard` as the Singleton and add simple file logging by giving it a file path (or a logger) and writing to the file every time a score is added. The main design change is to make `AddScore` an instance method (so we call `Scoreboard.GetInstance().AddScore(...)`) and then, right after updating the `_scores` dictionary, we append the same message we print to the console into a log file (like `scores.log`). That way, since everyone shares the one Singleton scoreboard, every score update gets logged in one consistent place.
+We can keep `Scoreboard` as the Singleton and add simple file logging by giving it a file path
+(or a logger) and writing to the file every time a score is added. The main design change is to 
+make `AddScore` an instance method (so we call `Scoreboard.GetInstance().AddScore(...)`) and then, 
+right after updating the `_scores` dictionary, we append the same message we print to the console 
+into a log file (like `scores.log`). That way, since everyone shares the one Singleton scoreboard, 
+every score update gets logged in one consistent place.
